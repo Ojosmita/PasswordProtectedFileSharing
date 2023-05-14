@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/index.css" type="text/css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="#signup">Sign Up</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <div class="form-center">
+        <form action="/file" method="post"
+            style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;"
+            enctype="multipart/form-data">
+            <label for="link"> File Link:</label>
+            <input type="link" id="link" name="link" required />
+            <label for="password"> Password:</label>
+            <input type="password" id="password" name="password" />
+            <button  type="submit"> Download </button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/index.css" type="text/css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="#signup">Sign Up</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <% if (locals.fileLink !=null) { %>
+        <div style="margin-bottom: 1rem;">
+           Your file is uploaded <br>
+           <p id="copyLink">
+            <%= locals.fileLink %> 
+           </p>
+            File Path: 
+            <a href="<%= locals.fileLink %>"> 
+                <%= locals.fileLink %> 
+            </a>
+        </div>
+        <% } %>
+
+        <button  onclick="handleCopyToClipboard()"> Copy to clipboard</button>
+
+
+</body>
+
+<script>
+    function handleCopyToClipboard() {
+  // Get the text field
+  var copyText = document.getElementById("copyLink").innerHTML.trim();
+  console.log(copyText);
+
+
+  // Select the text field
+//   copyText.select();
+//   copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText);
+
+  // Alert the copied text
+  alert("Copied the text: " + copyText);
+}
+</script>
+
+</html>
